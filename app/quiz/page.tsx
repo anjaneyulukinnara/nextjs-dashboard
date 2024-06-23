@@ -1,69 +1,65 @@
 "use client"
 
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-
-
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/app/ui/components/ui/avatar"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/app/ui/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/ui/components/ui/button"
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/app/ui/components/ui/form"
+import { Input } from "@/app/ui/components/ui/input"
 
 
 const formSchema = z.object({
     username: z.string().min(2, {
-      message: "Username must be at least 2 characters.",
+        message: "Username must be at least 2 characters.",
     }),
-  })
+})
 const CardContainer = () => {
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
-          username: "",
+            username: "",
         },
-      })
- function onSubmit(values:any) {
-    
-    console.log(values)
-  }
-    
+    })
+    function onSubmit(values: any) {
+
+        console.log(values)
+    }
+
     return (
         <div>
-<div className="PlayQuiz"><a>Playnig Quiz</a></div> 
+            <div className="PlayQuiz"><a>Playnig Quiz</a></div>
             <div className="SerachBox">
-            <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel></FormLabel>
-              <FormControl>
-                <Input placeholder="535 TV Series" {...field} />
-              </FormControl>
-              <FormDescription>
-              
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-    
-      </form>
-    </Form>
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                        <FormField
+                            control={form.control}
+                            name="username"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel></FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="535 TV Series" {...field} />
+                                    </FormControl>
+                                    <FormDescription>
+
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </form>
+                </Form>
             </div>
             <div className="CardContainer">
                 <div className="Card-Track">
@@ -333,9 +329,6 @@ const CardContainer = () => {
                     </a>
                 </div>
             </div>
-
-
-
         </div>
     )
 }

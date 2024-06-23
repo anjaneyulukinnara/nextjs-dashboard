@@ -232,13 +232,9 @@ box-shadow:0 0 0 2px rgb(255, 255, 255);
   padding: 0;
 }
 
-
-
 .FromContainer {
   height: 100vh;
-  background: url("/Background.png");
   margin-top: 20px;
-
 }
 .FormHeading{
   color:  #FFF;
@@ -573,7 +569,7 @@ width: 512px;
   transform: scale(0.99);
   transition: 2s;
 
-  .B{
+  .B {
     transition: 2s;
     Background-color: #0f1210;
   }
