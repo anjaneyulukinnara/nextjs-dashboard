@@ -1,18 +1,641 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-input[type='number'] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+  left: -15px;
+  height: 70px;
+
 }
 
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.Wizzy {
+  position: absolute;
+  left: 200px;
+  top: 30px;
 }
 
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.Menu {
+  display: flex;
+  position: absolute;
+  color: #282120;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  top: 20px;
+  left: 330px;
+  padding: 10px;
+}
+
+.li {
+  display: flex;
+  padding-left: 24px;
+}
+
+.li:hover {
+  transform: scale(1.05);
+}
+
+.Avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.Button {
+  display: flex;
+  position: absolute;
+  right: 150px;
+  top: 20px;
+  width: 220px;
+  justify-content: space-evenly;
+ 
+
+}
+
+.ButtonStyles {
+  border-radius: 40px;
+  border: 1px solid #0F1218;
+  background: #FFF;
+  color: #0F1218;
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-flex;
+  padding: 9px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+}
+
+.ButtonStyles:hover {
+  color: #FFF;
+}
+
+.NavWave {
+  position: absolute;
+  top: 80px;
+  left: -20px;
+
+}
+
+
+.PlayQuiz {
+  font-family: "Raleway";
+  color: #F5F5F5;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+  position: absolute;
+  top: 95px;
+  left: 190px;
+}
+
+.wavebox {
+  width: 100%;
+  height: 115px;
+  top: 0;
+  box-sizing: content-box;
+  
+}
+
+/* .wave::after{
+  content: "";
+  position: absolute;
+  top:90px;
+  left:-150px;
+width:  700px;
+height: 130px;
+background-color: #0F1218;
+border-radius: 100% 50%;;
+transform: rotate(3deg);
+box-shadow:0 0 0 0px #0F1218;
+}
+.wave::before{  
+  content: "";
+  position: absolute;
+  top:45px;
+  left:300px;
+  width:700px;
+  height: 130px;
+background-color: rgb(255, 255, 255);
+border-radius: 100% 50%;;
+transform: rotate(3deg);
+box-shadow:0 0 0 2px rgb(255, 255, 255);
+} */
+
+
+
+.SerachBox {
+  width: 205px;
+  height: 33.9px;
+  position: relative;
+  top: 75px;
+  left: 185px;
+  border: 2px solid 0F1218;
+}
+
+.shadow-sm {
+  height: 550px;
+}
+
+
+
+.Img {
+  border-radius: 16px;
+}
+
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm.Card:hover {
+  transform: scale(101%);
+}
+
+
+.p-6 {
+  padding: 0;
+}
+
+
+
+.FromContainer {
+  height: 100vh;
+  background: url("/Background.png");
+  margin-top: 20px;
+
+}
+.FormHeading{
+  color:  #FFF;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+position: relative;
+top: 115px;
+left: 670px;
+}
+.FormHeading1{
+  color:  #FFF;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+position: relative;
+top: 60px;
+left: 670px;
+}
+.FormImg {
+  display: flex;
+  position: relative;
+  top: 80px;
+  left: 20px;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.Form {
+  width: 400px;
+  position: relative;
+  top: 110px;
+  left: 590px;
+  color: #F5F5F5;
+
+}
+
+.FormName {
+  width: 512px;
+  color: #FFF;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: relative;
+  bottom: 10px;
+  right: 60px ;
+}
+.text-destructive{
+  position: absolute;
+  left: 80px;
+}
+
+.rounded-md{
+  border-radius: 24px;
+  border-radius: 24px;
+border: 1px solid  #FFF;
+background: rgba(255, 255, 255, 0.10);
+text-align: center;
+}
+.imgform {
+  border-radius: 50%;
+}
+
+.ChangeCard Button {
+  color:  #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+width: 184px;
+height: 40px;
+padding: 9px 32px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+flex-shrink: 0;
+border-radius: 24px;
+position: relative;
+left:680px;
+bottom: -40px;
+
+}
+
+
+.ChangeCard Button:hover {
+  background-color: #FFF;
+  color: #0f1218;
+}
+.SubmitButton{
+  width: 400px;
+  height: 48px;
+  border: none;
+  color: #282120;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 40px;
+border: 1px solid  #282120;
+background: #FFF;
+font-size: 18px;
+}
+.SubmitButton:hover{
+  color: #FFF;
+  border: 1px solid #FFF;
+ 
+}
+
+.diff{
+  color: var(--White, #FFF);
+  
+  width: 450px;
+margin: 100px 0 0 550px;
+}
+.diff h1{
+  color: var(--White, #FFF);
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 12px 0 12px 0;
+
+}
+.RadioGroup{
+  display: flex;
+  gap:3vw
+}
+.btnDiff{
+margin-left: 550px;
+  color: #F5F5F5;
+}
+.btnDiff Button {
+  width: 109px;
+}
+.grid{
+  display: flex
+}
+.gap-2{
+  gap:3vw;
+};
+.text-primary {
+  border-radius: 64px;
+  border: 1px solid var(--White, #FFF);
+  background: rgba(255, 255, 255, 0.10);
+  width: 48px;
+  height: 48px;
+  display: flex;
+}
+.text-primary:hover{
+  box-shadow: 0 0 0 1px #F5F5F5;
+
+}
+.btn{
+  color: #F5F5F5;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  
+}
+.radio{
+  margin-left: 60px;
+  margin-top: 10px;
+}
+.CopyCodePara{
+  margin:6vw 0 0 35vw;
+  color: var(--White, #FFF);
+text-align: center;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+width: 512px;
+}
+.body {
+  position: absolute;
+  top: 45px;
+}
+
+.slider {
+  top: 145px;
+  position: relative;
+  display: flex;
+  place-items: center;
+
+
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 18);
+  animation: scroll 50s linear infinite;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 9));
+  }
+}
+
+.slide {
+  height: 550px;
+  width: 450px;
+  display: flex;
+  margin-left: 10px;
+
+}
+
+.swipeimg {
+  width: 350px;
+  height: 350px;
+  border-radius: 14px;
+  transition: transform 1s;
+  margin: 12px 12px 0 18px;
+}
+
+.swipeimg:hover {
+  transform: translateZ(20px);
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 15%;
+
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: -100px;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.Line {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .Line {
+    background-color: #0F1218;
+    width: 1442px;
+    height: 1px;
+    position: absolute;
+    bottom: 60px;
+    z-index: -1;
+  }
+}
+
+.ShadeColor {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(30px);
+
+}
+
+.CardContainer {
+  display: flex;
+  place-items: center;
+  position: absolute;
+  top: 185px;
+
+}
+
+@media only screen and (min-width:600px) {
+  .CardContainer {
+    display: block;
+    flex-direction: row;
+  }
+
+  .Card-Track {
+    display: block;
+    animation: none;
+  }
+}
+
+.Card-Track {
+  display: flex;
+  width: calc(250px * 18);
+  /* animation: scroll 60s linear infinite; */
+
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 8));
+  }
+}
+
+
+.Card-Track:hover {
+  animation-play-state: paused;
+}
+
+.SingleCard {
+  width: 453px;
+  height: 630px;
+  margin: 12px;
+  border-radius: 24px;
+  transition: 1s;
+
+
+}
+
+.SingleCard:hover{
+  Box-shadow: 0 0 0 0.5px #0e0e10de;
+  transform: scale(0.99);
+  transition: 2s;
+
+  .B{
+    transition: 2s;
+    Background-color: #0f1210;
+  }
+
+  .Y {
+    transition: 2s;
+    background-color: #fadc93;
+  }
+
+   .G {
+    transition: 2s;
+    background-color: #c8dbad;
+  }
+
+  .R {
+    transition: 2s;
+    background-color: #e15754e1;
+  }}
+
+.CardImg {
+  border-radius: 14px;
+  width: 403px;
+  height: 403px;
+  position: relative;
+  top: 24px;
+  left: 24px;
+  z-index: 1;
+}
+
+.SingleCard h1 {
+  padding: 30px 0 0 24px;
+  color: #282120;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.SingleCard p {
+  width: 389px;
+  color: #282120;
+  padding: 6px 0 0 24px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.54px;
+  height: 95px;
+}
+
+.CardFooter {
+  display: flex;
+  width: 420px;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.CardButton {
+  border: 1px solid;
+  margin: 0 0 20px 350px;
+}
+
+.dAZYal {
+  border: 0;
 }
