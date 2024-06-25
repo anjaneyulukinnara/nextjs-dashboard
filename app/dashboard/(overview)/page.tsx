@@ -20,17 +20,14 @@ export default async function Page() {
       </h1>
       <Suspense fallback={<CardsSkeleton/>}>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* @ts-expect-error Async Server Component */}
           <CardWrapper/>
         </div>
       </Suspense>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <Suspense fallback={<RevenueChartSkeleton/>}>
-        {/* @ts-expect-error Async Server Component */}
         <RevenueChart />
         </Suspense>
         <Suspense>
-        {/* @ts-expect-error Async Server Component */}
         <LatestInvoices  />
         </Suspense>
       </div>
