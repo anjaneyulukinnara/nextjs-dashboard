@@ -98,8 +98,10 @@ export async function fetchFilteredInvoices(
 ) {
 
   noStore();
+  if(!currentPage) currentPage = 1;
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-
+  console.log({query});
+  
   try {
     const invoices = await sql<InvoicesTable>`
       SELECT
@@ -123,8 +125,8 @@ export async function fetchFilteredInvoices(
     `;
 
     return invoices.rows;
-  } catch (error) {
-    console.error('Database Error:', error);
+  } catch (error:any) {
+    console.error('Database Error:', error.messgae);
     throw new Error('Failed to fetch invoices.');
   }
 }
